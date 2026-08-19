@@ -864,7 +864,7 @@ li {
   background: #dce8f5;
 }
 .edu-fill {
-  background: #0b6bd3;
+  background: #2f4d6c;
 }
 .edu-item:last-child .edu-line,
 .edu-item:last-child .edu-fill {
@@ -878,12 +878,12 @@ li {
   height: 11px;
   flex: none;
   border-radius: 50%;
-  background: #0b6bd3;
+  background: #2f4d6c;
   box-shadow: 0 0 0 4px #fff;
 }
 .edu-item:last-child .edu-dot {
   background: #fff;
-  border: 2px solid #0b6bd3;
+  border: 2px solid #2f4d6c;
 }
 
 .edu-body {
@@ -1078,7 +1078,33 @@ li {
   border-color: #38bdf8;
 }
 
+/* journey bullet points: tick marks rather than dots.
+   the id beats the h-1.5/w-1.5/rounded-full/bg-* utilities on the span */
+#journey li > span.rounded-full {
+  top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F62C4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12.5l5.5 5.5L20 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px 15px;
+}
+
 /* ── timeline ── */
+/* dots and drawn line, both timelines. the doubled class outranks the
+   bg-* utility in the markup regardless of stylesheet order */
+.tl-fill.tl-fill,
+.tl-dot.tl-dot {
+  background-color: #2f4d6c;
+}
+/* the "earliest" marker stays a hollow ring */
+.tl-dot.tl-dot.border-2,
+.edu-item:last-child .tl-dot.tl-dot {
+  background-color: #fff;
+  border-color: #2f4d6c;
+}
 .tl-fill {
   transform: scaleY(0);
   transform-origin: top;
