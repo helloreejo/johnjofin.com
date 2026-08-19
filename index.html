@@ -513,11 +513,24 @@
         opacity: 1;
       }
       .brand-mark {
-        border-color: var(--link);
-        color: var(--link);
+        display: block;
+        width: 44px;
+        height: 44px;
+        flex: none;
+        border-radius: 8px;
         transition:
-          color 0.35s ease,
-          border-color 0.35s ease;
+          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.4s ease;
+      }
+      .brand-mark svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .brand:hover .brand-mark,
+      .brand:focus-visible .brand-mark {
+        transform: translateY(-2px) rotate(-6deg);
+        box-shadow: 0 12px 24px -12px rgba(11, 50, 49, 0.65);
       }
       .brand-name {
         color: var(--link);
@@ -1181,17 +1194,23 @@
         gap: 12px;
       }
       .foot-mark {
-        display: grid;
-        place-items: center;
+        display: block;
         width: 42px;
         height: 42px;
         flex: none;
-        border: 1px solid rgba(255, 255, 255, 0.4);
         border-radius: 8px;
-        font-family: "DM Sans", system-ui, sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-        color: #fff;
+        transition:
+          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.4s ease;
+      }
+      .foot-mark svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .foot-brand:hover .foot-mark {
+        transform: translateY(-2px) rotate(-6deg);
+        box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.6);
       }
       .foot-name {
         display: block;
@@ -1489,6 +1508,120 @@
         color: #a5382b;
       }
 
+      /* ── floating whatsapp ── */
+      .wa-fab {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 70;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(22px) scale(0.82);
+        transition:
+          opacity 0.45s ease,
+          transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+          visibility 0.55s;
+      }
+      .wa-fab.is-up {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      /* stay out of the way while the mobile menu owns the screen */
+      #menu[data-open="true"] ~ .wa-fab.is-up {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(14px) scale(0.9);
+      }
+      .wa-fab-btn {
+        display: flex;
+        align-items: center;
+        height: 56px;
+        border-radius: 8px;
+        background: #0b3231;
+        color: #9bca3b;
+        box-shadow: 0 14px 34px -14px rgba(11, 50, 49, 0.75);
+        transition:
+          background-color 0.35s ease,
+          color 0.35s ease,
+          transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.35s ease;
+      }
+      .wa-fab-btn:hover,
+      .wa-fab-btn:focus-visible {
+        background: #9bca3b;
+        color: #0f382a;
+        transform: translateY(-3px);
+        box-shadow: 0 18px 40px -14px rgba(11, 50, 49, 0.55);
+      }
+      .wa-fab-btn:focus-visible {
+        outline: 2px solid #0b3231;
+        outline-offset: 3px;
+      }
+      .wa-fab-label {
+        max-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        opacity: 0;
+        transition:
+          max-width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+          padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.3s ease;
+      }
+      .wa-fab-btn:hover .wa-fab-label,
+      .wa-fab-btn:focus-visible .wa-fab-label {
+        max-width: 220px;
+        padding-left: 20px;
+        opacity: 1;
+      }
+      .wa-fab-ic {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 56px;
+        height: 56px;
+        flex: none;
+      }
+      .wa-fab-ic::after {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border-radius: 8px;
+        border: 1.5px solid #9bca3b;
+        opacity: 0;
+        pointer-events: none;
+        animation: waPing 3.6s cubic-bezier(0.22, 1, 0.36, 1) 1.8s infinite;
+      }
+      .wa-fab-btn:hover .wa-fab-ic::after,
+      .wa-fab-btn:focus-visible .wa-fab-ic::after {
+        animation: none;
+        opacity: 0;
+      }
+      @keyframes waPing {
+        0% {
+          transform: scale(0.92);
+          opacity: 0;
+        }
+        16% {
+          opacity: 0.8;
+        }
+        72%,
+        100% {
+          transform: scale(1.9);
+          opacity: 0;
+        }
+      }
+      @media (min-width: 768px) {
+        .wa-fab {
+          right: 28px;
+          bottom: 28px;
+        }
+      }
+
       .plx {
         will-change: transform;
       }
@@ -1521,6 +1654,13 @@
         .plx {
           transform: none !important;
         }
+        .wa-fab {
+          transform: none !important;
+        }
+        .wa-fab-ic::after {
+          animation: none !important;
+          opacity: 0 !important;
+        }
       }
     </style>
   </head>
@@ -1535,6 +1675,35 @@
       focusable="false"
     >
       <defs>
+        <!-- brand mark: interlocking JJ monogram on a lime plate -->
+        <linearGradient id="jjPlate" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#B7DF57" />
+          <stop offset=".52" stop-color="#9BCA3B" />
+          <stop offset="1" stop-color="#6F9A22" />
+        </linearGradient>
+        <linearGradient id="jjSheen" x1=".12" y1="0" x2=".7" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".26" />
+          <stop offset=".58" stop-color="#fff" stop-opacity="0" />
+        </linearGradient>
+        <symbol id="i-jj" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="9" fill="url(#jjPlate)" />
+          <rect width="48" height="48" rx="9" fill="url(#jjSheen)" />
+          <path
+            d="M37 12.5v16a6 6 0 0 1-12 0"
+            fill="none"
+            stroke="#0B3231"
+            stroke-width="4.4"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <path
+            d="M23 12.5v16a6 6 0 0 1-12 0"
+            fill="none"
+            stroke="#0B3231"
+            stroke-width="4.4"
+            stroke-linecap="round"
+          />
+        </symbol>
         <symbol id="i-arrow-right" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7" />
         </symbol>
@@ -1654,9 +1823,12 @@
           />
         </symbol>
         <symbol id="i-whatsapp" viewBox="0 0 24 24">
+          <!-- inset so the round mark optically matches the other 20u icons -->
+          <g transform="translate(1.7 1.7) scale(.858)">
           <path
-            d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.3 5.3 0 0 0 2.5.5 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
           />
+          </g>
         </symbol>
       </defs>
     </svg>
@@ -1673,11 +1845,12 @@
         class="mx-auto flex h-full max-w-edge items-center justify-between px-5 lg:px-10"
         aria-label="Primary"
       >
-        <a href="#top" data-scroll class="flex items-center gap-3">
-          <span
-            class="brand-mark grid h-11 w-11 flex-none place-items-center rounded-card border font-display text-[15px] font-medium"
-            >JJ</span
-          >
+        <a href="#top" data-scroll class="brand flex items-center gap-3">
+          <span class="brand-mark">
+            <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <use href="#i-jj" />
+            </svg>
+          </span>
           <span class="leading-none">
             <span class="brand-name block font-display text-[17px] font-medium"
               >John Jofin</span
@@ -2309,7 +2482,7 @@
         id="spiritual"
         class="relative flex flex-col justify-end overflow-hidden bg-forest-800 py-20 md:py-24"
       >
-        <div class="plx absolute inset-[0%] z-0" data-parallax="0.1">
+        <div class="plx absolute inset-[-10%] z-0" data-parallax="0.1">
           <img
             src="images/hero-chapel-1408.jpg"
             width="1600"
@@ -3643,7 +3816,7 @@
 
                 <div class="reveal contact-line" style="--d: 160ms">
                   <span class="c-ic c-ic-sm"
-                    ><svg class="icon"><use href="#i-whatsapp" /></svg
+                    ><svg class="icon icon-fill"><use href="#i-whatsapp" /></svg
                   ></span>
                   <p class="contact-text">
                     <a
@@ -3919,7 +4092,11 @@
       <div class="wrap">
         <div class="foot-row">
           <a href="#top" data-scroll class="foot-brand">
-            <span class="foot-mark">JJ</span>
+            <span class="foot-mark">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <use href="#i-jj" />
+              </svg>
+            </span>
             <span>
               <span class="foot-name">John Jofin</span>
               <span class="foot-sub">CPA · Founder · Faith Witness</span>
@@ -3955,6 +4132,24 @@
         </div>
       </div>
     </footer>
+
+    <!-- floating whatsapp -->
+    <div class="wa-fab">
+      <a
+        class="wa-fab-btn"
+        href="https://wa.me/18255266099"
+        target="_blank"
+        rel="noopener"
+        aria-label="Chat with John Jofin on WhatsApp"
+      >
+        <span class="wa-fab-label" aria-hidden="true">Chat on WhatsApp</span>
+        <span class="wa-fab-ic">
+          <svg class="icon icon-fill" aria-hidden="true" focusable="false">
+            <use href="#i-whatsapp" />
+          </svg>
+        </span>
+      </a>
+    </div>
 
     <script type="application/ld+json">
       {
@@ -4002,6 +4197,7 @@
         var header = document.getElementById("siteheader");
         var burger = document.getElementById("burger");
         var menu = document.getElementById("menu");
+        var waFab = document.querySelector(".wa-fab");
 
         /* ---------- header: scrolls away on the way down, slides back on the way up ---------- */
         var lastY = window.scrollY;
@@ -4153,7 +4349,19 @@
         }
 
         measureSpy();
-        window.addEventListener("load", measureSpy);
+        window.addEventListener("load", function () {
+          /* browsers restore the scroll position after load: re-measure and
+             re-paint so header, nav and fab match where we actually are */
+          measureSpy();
+          frame();
+        });
+
+        /* ---------- floating whatsapp: rises once the hero is behind you ---------- */
+        var FAB_AFTER = 320;
+        function fabState() {
+          if (!waFab) return;
+          waFab.classList.toggle("is-up", window.scrollY > FAB_AFTER);
+        }
 
         /* ---------- parallax ---------- */
         var plxActive = [];
@@ -4183,6 +4391,7 @@
           ticking = false;
           headerState();
           paintActive();
+          fabState();
           for (var i = 0; i < plxActive.length; i++) {
             var el = plxActive[i];
             var rect = el.getBoundingClientRect();
