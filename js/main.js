@@ -5,6 +5,25 @@
   "use strict";
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- lenis (MIT): eases the wheel/trackpad, leaves the real
+     scroll position alone so the header, scrollspy, parallax and reveals
+     all keep reading window.scrollY as before ---------- */
+  var lenis = null;
+  if (typeof Lenis !== "undefined" && !reduced) {
+    lenis = new Lenis({
+      duration: 1.05,
+      easing: function (t) {
+        return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+      },
+      smoothWheel: true,
+      touchMultiplier: 1.6,
+    });
+    (function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    })();
+  }
   var header = document.getElementById("siteheader");
   var burger = document.getElementById("burger");
   var menu = document.getElementById("menu");
@@ -32,6 +51,10 @@
     burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     header.classList.toggle("menu-open", open);
     document.body.style.overflow = open ? "hidden" : "";
+    if (lenis) {
+      if (open) lenis.stop();
+      else lenis.start();
+    }
     if (open) {
       var first = menu.querySelector("a");
       if (first) first.focus({ preventScroll: true });
@@ -57,10 +80,11 @@
     if (!el) return;
     e.preventDefault();
     if (menu.getAttribute("data-open") === "true") setMenu(false);
-    el.scrollIntoView({
-      behavior: reduced ? "auto" : "smooth",
-      block: "start",
-    });
+    if (lenis) {
+      lenis.scrollTo(el);
+    } else {
+      el.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+    }
     if (history.replaceState) history.replaceState(null, "", id);
   });
 

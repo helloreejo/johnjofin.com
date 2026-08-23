@@ -8,7 +8,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -744,23 +743,6 @@ li {
   .hero-media {
     min-height: 100svh;
   }
-  /* side-by-side layout: fade the left edge into the type panel */
-  .hero-media .hero-img {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(0, 0, 0, 0.22) 13%,
-      rgba(0, 0, 0, 0.62) 29%,
-      #000 47%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(0, 0, 0, 0.22) 13%,
-      rgba(0, 0, 0, 0.62) 29%,
-      #000 47%
-    );
-  }
 }
 .hero-media .hero-img {
   width: 100%;
@@ -785,7 +767,29 @@ li {
     fadeIn 1.6s ease forwards,
     zoomOut 16s cubic-bezier(0.2, 0, 0.2, 1) forwards;
 }
-/* just enough shade at the top edge to keep the nav legible over the photo */
+/* side-by-side layout: the panel edge dissolves instead of butting up
+   against the photograph. must come after the rule above — same
+   specificity, so source order decides. */
+@media (min-width: 1024px) {
+  .hero-media .hero-img {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.14) 12%,
+      rgba(0, 0, 0, 0.48) 27%,
+      rgba(0, 0, 0, 0.82) 40%,
+      #000 54%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.14) 12%,
+      rgba(0, 0, 0, 0.48) 27%,
+      rgba(0, 0, 0, 0.82) 40%,
+      #000 54%
+    );
+  }
+}
 
 .hero-step {
   opacity: 0;
@@ -1571,9 +1575,6 @@ select.field {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   *,
   *::before,
   *::after {
