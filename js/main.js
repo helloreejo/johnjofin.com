@@ -10,7 +10,6 @@
   var header = document.getElementById("siteheader");
   var burger = document.getElementById("burger");
   var menu = document.getElementById("menu");
-  var waFab = document.querySelector(".wa-fab");
 
   /* ---------- header: scrolls away on the way down, slides back on the way up ---------- */
   var lastY = window.scrollY;
@@ -169,13 +168,6 @@
     frame();
   });
 
-  /* ---------- floating whatsapp: rises once the hero is behind you ---------- */
-  var FAB_AFTER = 320;
-  function fabState() {
-    if (!waFab) return;
-    waFab.classList.toggle("is-up", window.scrollY > FAB_AFTER);
-  }
-
   /* ---------- parallax ---------- */
   var plxActive = [];
   var plxNodes = Array.prototype.slice.call(
@@ -204,7 +196,6 @@
     ticking = false;
     headerState();
     paintActive();
-    fabState();
     for (var i = 0; i < plxActive.length; i++) {
       var el = plxActive[i];
       var rect = el.getBoundingClientRect();
@@ -231,76 +222,60 @@
   frame();
 
   /* ---------- references: featured quote ---------- */
+  /* splide (MIT) runs the carousel — auto-advance, crossfade, swipe and the
+     screen-reader plumbing. the arrows, counter and name tabs stay ours; they
+     just drive splide instead of hand-rolled state. */
   (function () {
     var wrap = document.getElementById("refCarousel");
-    if (!wrap) return;
-    var slides = [].slice.call(wrap.querySelectorAll(".q-slide"));
+    if (!wrap || typeof Splide === "undefined") return;
     var tabs = [].slice.call(wrap.querySelectorAll(".q-tab"));
     var now = document.getElementById("qNow");
-    var live = document.getElementById("qLive");
     var prev = document.getElementById("qPrev");
     var next = document.getElementById("qNext");
-    var i = 0;
 
-    function show(n, moveFocus) {
-      i = (n + slides.length) % slides.length;
-      slides.forEach(function (sl, k) {
-        var on = k === i;
-        sl.classList.toggle("is-active", on);
-        if (on) {
-          sl.removeAttribute("aria-hidden");
-        } else {
-          sl.setAttribute("aria-hidden", "true");
-        }
-      });
+    var splide = new Splide(wrap, {
+      type: "fade",
+      rewind: true,
+      perPage: 1,
+      speed: 450,
+      easing: "ease",
+      autoplay: true,
+      interval: 7000,
+      pauseOnHover: true,
+      pauseOnFocus: true,
+      arrows: false /* the .q-arrow buttons below stand in */,
+      pagination: false /* the .q-tab strip stands in */,
+      keyboard: false /* arrow keys belong to the page, not the carousel */,
+      drag: !reduced,
+      i18n: { carousel: "references", slide: "reference" },
+    });
+
+    splide.on("move", function (i) {
+      now.textContent = ("0" + (i + 1)).slice(-2);
       tabs.forEach(function (t, k) {
         var on = k === i;
         t.classList.toggle("is-active", on);
-        t.setAttribute("aria-selected", on ? "true" : "false");
-        t.setAttribute("tabindex", on ? "0" : "-1");
+        if (on) {
+          t.setAttribute("aria-current", "true");
+        } else {
+          t.removeAttribute("aria-current");
+        }
       });
-      now.textContent = ("0" + (i + 1)).slice(-2);
-      var name = slides[i].querySelector("figcaption b");
-      if (live && name)
-        live.textContent =
-          "Reference " +
-          (i + 1) +
-          " of " +
-          slides.length +
-          ": " +
-          name.textContent;
-      if (moveFocus) tabs[i].focus();
-    }
+    });
+
+    splide.mount();
 
     prev.addEventListener("click", function () {
-      show(i - 1);
+      splide.go("<");
     });
     next.addEventListener("click", function () {
-      show(i + 1);
+      splide.go(">");
     });
     tabs.forEach(function (t) {
       t.addEventListener("click", function () {
-        show(parseInt(t.getAttribute("data-i"), 10));
+        splide.go(parseInt(t.getAttribute("data-i"), 10));
       });
     });
-
-    wrap
-      .querySelector(".q-tabs")
-      .addEventListener("keydown", function (e) {
-        if (e.key === "ArrowRight") {
-          e.preventDefault();
-          show(i + 1, true);
-        } else if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          show(i - 1, true);
-        } else if (e.key === "Home") {
-          e.preventDefault();
-          show(0, true);
-        } else if (e.key === "End") {
-          e.preventDefault();
-          show(slides.length - 1, true);
-        }
-      });
   })();
 
   /* ---------- contact form ---------- */
