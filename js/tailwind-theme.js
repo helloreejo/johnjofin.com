@@ -31,7 +31,7 @@ tailwind.config = {
         card: "0 4px 13.9px 0 rgba(0,0,0,0.05)",
         lift: "0 14px 34px -12px rgba(0, 61, 122,0.16)",
       },
-      maxWidth: { edge: "1340px" },
+      maxWidth: { edge: "1260px" },
     },
   },
 };

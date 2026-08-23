@@ -4,51 +4,25 @@
 (function () {
   "use strict";
 
-  var reduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var header = document.getElementById("siteheader");
   var burger = document.getElementById("burger");
   var menu = document.getElementById("menu");
 
-  /* ---------- header: scrolls away on the way down, slides back on the way up ---------- */
-  var lastY = window.scrollY;
-  var PIN_AFTER = 160; /* px of travel before the header may re-attach */
-  var DIR_MIN = 6; /* ignore scroll jitter smaller than this */
+  /* ---------- header: fixed at the top, solid once the page moves ---------- */
+  /* two thresholds, not one: a single trip point sits right where a trackpad
+     jitters, and the bar would re-fire the whole change every wobble */
+  var SOLID_ON = 88; /* going down: past the transparent bar's own height */
+  var SOLID_OFF = 24; /* coming back up: only clear once near the very top */
 
   function headerState() {
-    var y = window.scrollY;
-    if (y < 0) y = 0;
-    var dy = y - lastY;
-
     if (menu.getAttribute("data-open") === "true") {
       /* menu is open: leave the header exactly where it is */
-      lastY = y;
       return;
     }
-
-    if (y <= 8) {
-      /* back at the top: return to the transparent in-flow header */
-      header.classList.remove("is-pinned", "is-hidden", "is-solid");
-    } else if (y > PIN_AFTER) {
-      if (!header.classList.contains("is-pinned")) {
-        /* re-attach off-screen so it can only ever animate *in*.
-           without is-instant the browser would tween transform from
-           0 to -100%, flashing the header through the viewport. */
-        header.classList.add("is-instant");
-        header.classList.add("is-pinned", "is-hidden", "is-solid");
-        void header.offsetHeight; /* flush styles before re-enabling */
-        header.classList.remove("is-instant");
-      }
-      if (Math.abs(dy) > DIR_MIN) {
-        header.classList.toggle("is-hidden", dy > 0);
-      }
-    } else {
-      /* in the hand-off zone the header simply scrolls with the page */
-      header.classList.remove("is-pinned", "is-hidden", "is-solid");
-    }
-
-    lastY = y;
+    var y = window.scrollY;
+    if (y > SOLID_ON) header.classList.add("is-solid");
+    else if (y < SOLID_OFF) header.classList.remove("is-solid");
   }
 
   /* ---------- mobile menu ---------- */
@@ -57,10 +31,6 @@
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     header.classList.toggle("menu-open", open);
-    if (open && window.scrollY > 8) {
-      header.classList.add("is-pinned");
-      header.classList.remove("is-hidden");
-    }
     document.body.style.overflow = open ? "hidden" : "";
     if (open) {
       var first = menu.querySelector("a");
@@ -178,10 +148,8 @@
       function (entries) {
         entries.forEach(function (entry) {
           var i = plxActive.indexOf(entry.target);
-          if (entry.isIntersecting && i === -1)
-            plxActive.push(entry.target);
-          else if (!entry.isIntersecting && i > -1)
-            plxActive.splice(i, 1);
+          if (entry.isIntersecting && i === -1) plxActive.push(entry.target);
+          else if (!entry.isIntersecting && i > -1) plxActive.splice(i, 1);
         });
       },
       { threshold: 0 },
@@ -288,8 +256,7 @@
       var err = document.getElementById(id + "-err");
       var input = document.getElementById(id);
       if (err) err.classList.toggle("show", on);
-      if (input)
-        input.setAttribute("aria-invalid", on ? "true" : "false");
+      if (input) input.setAttribute("aria-invalid", on ? "true" : "false");
     }
     function setStatus(msg, kind) {
       status.className = "mt-5 form-note " + kind;
@@ -297,19 +264,17 @@
       status.classList.remove("hidden");
     }
 
-    ["cf-name", "cf-email", "cf-message", "cf-consent"].forEach(
-      function (id) {
-        var el = document.getElementById(id);
-        if (el)
-          el.addEventListener("input", function () {
-            showErr(id, false);
-          });
-        if (el)
-          el.addEventListener("change", function () {
-            showErr(id, false);
-          });
-      },
-    );
+    ["cf-name", "cf-email", "cf-message", "cf-consent"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el)
+        el.addEventListener("input", function () {
+          showErr(id, false);
+        });
+      if (el)
+        el.addEventListener("change", function () {
+          showErr(id, false);
+        });
+    });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -322,9 +287,7 @@
       var ok = true,
         firstBad = null;
 
-      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(
-        email.value.trim(),
-      );
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim());
       if (!name.value.trim()) {
         showErr("cf-name", true);
         ok = false;
@@ -353,9 +316,7 @@
       if (honeypot && honeypot.value) return; /* bot */
 
       var endpoint =
-        form.getAttribute("data-endpoint") ||
-        form.getAttribute("action") ||
-        "";
+        form.getAttribute("data-endpoint") || form.getAttribute("action") || "";
 
       if (!endpoint) {
         setStatus(

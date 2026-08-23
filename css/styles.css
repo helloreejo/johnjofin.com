@@ -47,7 +47,7 @@ li {
 /* ── layout scale — every section shares one rhythm ── */
 .wrap {
   width: 100%;
-  max-width: 1340px;
+  max-width: 1260px;
   margin-inline: auto;
   padding-inline: 20px;
 }
@@ -348,6 +348,12 @@ li {
 }
 
 /* ── header ── */
+/* every property that changes with .is-solid runs on this one curve, so the
+   bar, its scrim, its links and its button all land together */
+:root {
+  --hdr-t: 0.42s;
+  --hdr-e: cubic-bezier(0.33, 0, 0.2, 1);
+}
 /* the nav sits over a bright photograph at the top of the page, so the
    header carries its own scrim rather than relying on the hero image */
 #siteheader::before {
@@ -363,7 +369,7 @@ li {
     rgba(0, 30, 61, 0.35) 55%,
     rgba(0, 30, 61, 0) 100%
   );
-  transition: opacity 0.35s ease;
+  transition: opacity var(--hdr-t) var(--hdr-e);
 }
 #siteheader.is-solid::before {
   opacity: 0;
@@ -373,30 +379,14 @@ li {
   z-index: 1;
 }
 #siteheader {
-  --h: 88px;
+  --h: 70px;
   --link: #ffffff;
   height: var(--h);
-  will-change: transform;
   transition:
-    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    height 0.3s ease,
-    background-color 0.35s ease,
-    box-shadow 0.35s ease;
-}
-/* pinned = re-attached to the viewport after the user scrolls back up */
-#siteheader.is-pinned {
-  position: fixed;
-}
-#siteheader.is-hidden {
-  transform: translateY(-100%);
-}
-/* used for a single frame when the header re-attaches, so it snaps
-   out of view instead of animating up through the viewport */
-#siteheader.is-instant {
-  transition: none;
+    background-color var(--hdr-t) var(--hdr-e),
+    box-shadow var(--hdr-t) var(--hdr-e);
 }
 #siteheader.is-solid {
-  --h: 60px;
   --link: #0a0a0a;
   background-color: #fff;
   box-shadow:
@@ -404,16 +394,12 @@ li {
     0 10px 30px -22px rgba(0, 61, 122, 0.55);
 }
 #siteheader .btn {
-  transition:
-    color 0.3s cubic-bezier(0.4, 0, 1, 1),
-    background-color 0.3s cubic-bezier(0.4, 0, 1, 1),
-    border-color 0.3s cubic-bezier(0.4, 0, 1, 1),
-    padding 0.3s ease,
-    font-size 0.3s ease;
-}
-#siteheader.is-solid .btn {
   padding: 8px 18px;
   font-size: 14px;
+  transition:
+    color var(--hdr-t) var(--hdr-e),
+    background-color var(--hdr-t) var(--hdr-e),
+    border-color var(--hdr-t) var(--hdr-e);
 }
 #siteheader.menu-open {
   --link: #ffffff;
@@ -424,8 +410,8 @@ li {
   color: var(--link);
   opacity: 0.8;
   transition:
-    opacity 0.25s ease,
-    color 0.35s ease;
+    opacity var(--hdr-t) var(--hdr-e),
+    color var(--hdr-t) var(--hdr-e);
 }
 .navlink:hover,
 .navlink.is-active {
@@ -446,14 +432,14 @@ li {
 }
 .brand-name {
   color: var(--link);
-  transition: color 0.35s ease;
+  transition: color var(--hdr-t) var(--hdr-e);
 }
 .burger span {
   background: var(--link);
   transition:
-    background-color 0.35s ease,
+    background-color var(--hdr-t) var(--hdr-e),
     transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.25s ease;
+    opacity var(--hdr-t) var(--hdr-e);
 }
 .burger[aria-expanded="true"] span:nth-child(1) {
   transform: translateY(5px) rotate(45deg);
@@ -550,9 +536,9 @@ li {
 }
 @media (min-width: 1024px) {
   .hero-type {
-    /* align the type with the 1340px container used by every other section */
-    padding: 140px max(40px, calc((100vw - 1340px) / 2 + 40px)) 80px
-      max(40px, calc((100vw - 1340px) / 2 + 40px));
+    /* align the type with the 1260px container used by every other section */
+    padding: 140px max(40px, calc((100vw - 1260px) / 2 + 40px)) 80px
+      max(40px, calc((100vw - 1260px) / 2 + 40px));
     padding-right: 64px;
   }
 }
@@ -960,7 +946,7 @@ li {
 }
 @media (min-width: 768px) {
   .edu-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .edu-inst {
@@ -1173,6 +1159,39 @@ li {
   border-color: #fff;
 }
 
+/* the shade over the shrine photograph. stacked, the copy runs the full
+   width, so it has to hold right across; side by side it can fall away and
+   let the shrine read. */
+.spir-scrim {
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 61, 122, 0.92) 0%,
+      rgba(0, 61, 122, 0.78) 50%,
+      rgba(0, 61, 122, 0.58) 100%
+    ),
+    linear-gradient(to top, rgba(0, 61, 122, 0.72), transparent 52%);
+}
+@media (min-width: 1024px) {
+  .spir-scrim {
+    background:
+      linear-gradient(
+        100deg,
+        rgba(0, 61, 122, 0.7) 0%,
+        rgba(0, 61, 122, 0.56) 34%,
+        rgba(0, 61, 122, 0.4) 64%,
+        rgba(0, 61, 122, 0.05) 100%
+      ),
+      linear-gradient(to top, rgba(0, 61, 122, 0.72), transparent 52%);
+  }
+}
+
+/* the Marian shrine sits high on the right of the photograph, so the crop
+   is biased that way rather than centred */
+#spiritual .plx img {
+  object-position: 100% 8%;
+}
+
 /* journey bullet points: tick marks rather than dots.
    the id beats the h-1.5/w-1.5/rounded-full/bg-* utilities on the span */
 #journey li > span.rounded-full {
@@ -1192,7 +1211,7 @@ li {
    bg-* utility in the markup regardless of stylesheet order */
 .tl-fill.tl-fill,
 .tl-dot.tl-dot {
-  background-color: #0b67af;
+  background-color: #b2bec7;
 }
 /* the "earliest" marker stays a hollow ring */
 .tl-dot.tl-dot.border-2,
