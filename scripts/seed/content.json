@@ -1,0 +1,798 @@
+{
+  "seo": {
+    "title": "John Jofin — Chartered Professional Accountant · Founder & CEO · Faith Witness",
+    "description": "John Jofin — Chartered Professional Accountant, Founder & CEO of Santo Catholic Mission, and a witness of faith devoted to the Holy Eucharist, the Holy Rosary, and Eucharistic Adoration.",
+    "author": "John Jofin",
+    "theme_color": "#003D7A",
+    "canonical": "https://johnjofin.com/",
+    "og_title": "John Jofin — Chartered Professional Accountant · Founder & CEO · Faith Witness",
+    "og_description": "Chartered Professional Accountant (CPA, CGA, ACCA), Founder & CEO of Santo Catholic Mission, and a witness of faith. I dream to live, and live to inspire.",
+    "og_url": "https://johnjofin.com/",
+    "og_image": "https://johnjofin.com/images/hero.jpg",
+    "og_locale": "en_CA",
+    "og_site_name": "johnjofin.com",
+    "twitter_title": "John Jofin — Chartered Professional Accountant · Founder & CEO · Faith Witness",
+    "twitter_description": "Chartered Professional Accountant, Founder & CEO of Santo Catholic Mission, and a witness of faith.",
+    "twitter_image": "https://johnjofin.com/images/hero.jpg",
+    "jsonld": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "John Jofin",
+      "url": "https://johnjofin.com/",
+      "image": "https://johnjofin.com/images/hero.jpg",
+      "jobTitle": "Chartered Professional Accountant, Founder & CEO",
+      "description": "Chartered Professional Accountant (CPA) and Certified General Accountant (CGA) qualified in Canada, Founder & CEO of Santo Catholic Mission.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Santo Catholic Mission",
+        "url": "https://santomission.com"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Chester, England"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Mahatma Gandhi University, India"
+        }
+      ],
+      "email": "mailto:johnjofin@santomission.com",
+      "hasCredential": [
+        "CPA",
+        "CGA",
+        "FCCA / ACCA",
+        "MBA",
+        "M.Com",
+        "B.Com"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/john-jofin",
+        "https://www.facebook.com/johnjofin.santomission",
+        "https://www.instagram.com/johnjofin.santo/",
+        "https://santomission.com",
+        "https://holymotherandme.com"
+      ]
+    }
+  },
+  "header": {
+    "skip_label": "Skip to content",
+    "brand": "John Jofin",
+    "nav": [
+      {
+        "label": "Home",
+        "href": "#top",
+        "nav_id": "top"
+      },
+      {
+        "label": "About",
+        "href": "#about",
+        "nav_id": "about"
+      },
+      {
+        "label": "Faith",
+        "href": "#faith",
+        "nav_id": "faith"
+      },
+      {
+        "label": "Journey",
+        "href": "#journey",
+        "nav_id": "journey"
+      },
+      {
+        "label": "Credentials",
+        "href": "#credentials",
+        "nav_id": "credentials"
+      },
+      {
+        "label": "References",
+        "href": "#references",
+        "nav_id": "references"
+      }
+    ],
+    "cta": {
+      "label": "Get in touch",
+      "href": "#contact"
+    },
+    "menu_links": [
+      {
+        "label": "Home",
+        "href": "#top"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Faith",
+        "href": "#faith"
+      },
+      {
+        "label": "Journey",
+        "href": "#journey"
+      },
+      {
+        "label": "Credentials",
+        "href": "#credentials"
+      },
+      {
+        "label": "References",
+        "href": "#references"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "menu_external": [
+      {
+        "label": "Santo Mission",
+        "href": "https://santomission.com"
+      },
+      {
+        "label": "Holy Mother & Me",
+        "href": "https://holymotherandme.com"
+      }
+    ]
+  },
+  "hero": {
+    "greeting": "I'm",
+    "name": "John Jofin",
+    "tagline": "Precision in business. <span class=\"text-lime-light\">Purpose in life.</span>",
+    "intro": "Founder &amp; CEO of Santo Catholic Mission | Chartered Professional Accountant",
+    "cta": [
+      {
+        "label": "Explore my story",
+        "href": "#about",
+        "style": "primary"
+      },
+      {
+        "label": "View resume",
+        "href": "#journey",
+        "style": "transparent"
+      }
+    ],
+    "cue_label": "Scroll",
+    "cue_aria": "Scroll to About",
+    "image": {
+      "src": "images/john-jofin.jpg",
+      "alt": "John Jofin standing in a sunlit woodland clearing at golden hour",
+      "width": 1376,
+      "height": 768
+    },
+    "creds": [
+      "CPA",
+      "CGA",
+      "FCCA",
+      "MBA",
+      "M.Com",
+      "B.Com"
+    ]
+  },
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years of expertise"
+    },
+    {
+      "value": "6",
+      "label": "Professional credentials"
+    },
+    {
+      "value": "4+",
+      "label": "Languages known"
+    },
+    {
+      "value": "10+",
+      "label": "Languages — Santo Mission"
+    }
+  ],
+  "about": {
+    "heading": "Precision in business. Devotion in life.",
+    "eyebrow": "About",
+    "lead": null,
+    "body": [
+      "I'm a <strong class=\"hl\">Chartered Professional Accountant (CPA)</strong> and <strong class=\"hl\">Certified General Accountant (CGA)</strong>, qualified in Canada, with internationally recognized credentials and over 15 years of experience in <strong class=\"strong-t\">financial accounting</strong> and <strong class=\"strong-t\">strategic leadership</strong>. I also hold the <strong class=\"hl\">ACCA (UK)</strong>, and completed my <strong class=\"strong-t\">MBA in England</strong> and <strong class=\"strong-t\">M.Com &amp; B.Com in India</strong>.",
+      "As <strong class=\"hl\">Founder &amp; CEO of Santo Catholic Mission</strong>, I've built a global Catholic media apostolate carrying prayer and inspiration to the world in more than ten languages. Yet the truest part of who I am is my faith: nourished daily by the <strong class=\"strong-g\">Holy Eucharist</strong>, the <strong class=\"strong-g\">Holy Rosary</strong>, and <strong class=\"strong-g\">Eucharistic Adoration</strong>. I begin each day with the Rosary in hand, and I share my story simply as a witness — in the hope that one life given to God might encourage another."
+    ],
+    "quote": {
+      "text": "I dream to live, and <em>live to inspire</em> — and my mission is to bring <em>faith to everyone.</em>",
+      "name": "John Jofin",
+      "role": "Chartered Professional Accountant · Founder"
+    },
+    "creds": [
+      {
+        "key": "CPA",
+        "value": "Canada"
+      },
+      {
+        "key": "CGA",
+        "value": "Canada"
+      },
+      {
+        "key": "FCCA / ACCA",
+        "value": "United Kingdom"
+      },
+      {
+        "key": "MBA",
+        "value": "England"
+      },
+      {
+        "key": "M.Com",
+        "value": "India"
+      },
+      {
+        "key": "B.Com",
+        "value": "India"
+      }
+    ]
+  },
+  "dimensions": {
+    "heading": "Three roles. One purpose.",
+    "eyebrow": "Who I am",
+    "lead": "Profession, mission, and faith — three dimensions of a life guided by purpose.",
+    "cards": [
+      {
+        "number": "01",
+        "icon": "i-calculator",
+        "title": "Chartered Professional Accountant",
+        "body": "Fifteen-plus years in financial control, analysis, and advisory — internationally qualified across Canada, the UK, and India."
+      },
+      {
+        "number": "02",
+        "icon": "i-globe",
+        "title": "Founder &amp; CEO",
+        "body": "Leading Santo Catholic Mission — faith-technology carrying prayer and inspiration to believers in more than ten languages."
+      },
+      {
+        "number": "03",
+        "icon": "i-church",
+        "title": "Faith Witness",
+        "body": "A life rooted in the Holy Eucharist, the Rosary, and Adoration — sharing my story so that faith and purpose may encourage others."
+      }
+    ]
+  },
+  "faith": {
+    "heading": "A promise made at seven, kept for a lifetime.",
+    "eyebrow": "My faith & dedication",
+    "lead": null,
+    "quote": "When I was <span class=\"text-lime-light\">seven years old</span>, I knelt before Our Lady with my grandmother's rosary and made a promise to the <span class=\"text-lime-light\">Infant Jesus</span> and the <span class=\"text-lime-light\">Holy Mother</span>: that if they guided me in life, I would tell the whole world about them. That promise has shaped every day since — my work, my mission, and my every breath are dedicated to keeping it.",
+    "motto": "Ad Jesum per Mariam — To Jesus, through Mary",
+    "motto_note": "The promise of a seven-year-old, kept through a lifetime — sustained each day by three devotions.",
+    "cards": [
+      {
+        "icon": "i-sun",
+        "title": "The Holy Eucharist",
+        "body": "The source and summit of my life — I strive to receive Our Lord in Holy Communion as often as each day allows."
+      },
+      {
+        "icon": "i-rosary",
+        "title": "The Holy Rosary",
+        "body": "Carried with me always. I begin every day in the hands of the Blessed Mother, one decade at a time."
+      },
+      {
+        "icon": "i-flame",
+        "title": "Eucharistic Adoration",
+        "body": "Quiet hours before the Blessed Sacrament, where the heart is stilled, renewed, and made ready for the day."
+      }
+    ]
+  },
+  "spiritual": {
+    "eyebrow": "04 — My spiritual blog",
+    "heading": "Holy Mother <span class=\"text-lime-light\">&amp; Me</span>",
+    "subtitle": "Alongside the Mother",
+    "quote": "“My life, my breath, my every moment — for my Jesus and His Holy Mother.”",
+    "cta": {
+      "label": "Read my faith journey",
+      "href": "https://holymotherandme.com"
+    },
+    "image": {
+      "src": "images/hero-chapel-1408.jpg",
+      "alt": "A golden monstrance holding the Blessed Sacrament, lit by candlelight during Eucharistic Adoration",
+      "width": 1600,
+      "height": 888
+    }
+  },
+  "journey": {
+    "heading": "Professional journey",
+    "eyebrow": "Curriculum vitae",
+    "lead": "Internationally qualified — 15+ years across financial accounting, strategic management, and academic research.",
+    "summary": "Canadian Chartered Professional Accountant (CPA) with international training and experience in accounting, business administration, strategic leadership, and business development. A proactive leader with strengths in communication and collaboration — adept at managing concurrent objectives to promote efficiency and influence positive outcomes.",
+    "resume": {
+      "icon": "i-file",
+      "title": "Professional Resume",
+      "body": "A complete overview of my professional experience, education, qualifications, and credentials.",
+      "cta_label": "Download Resume",
+      "file": "john-jofin-resume.pdf"
+    },
+    "items": [
+      {
+        "period": "02/2022 — Current",
+        "location": "Alberta, Canada",
+        "icon": "i-globe",
+        "role": "Founder &amp; CEO",
+        "org": "Santo Catholic Mission",
+        "two_col": false,
+        "bullets": [
+          "Initiated <strong class=\"font-semibold text-ink\">Santo</strong> — a Catholic prayer &amp; meditation app distributing Catholic media in more than ten languages.",
+          "Devised the organizational vision, mission, and foundational structure for early growth.",
+          "Coordinated with clergy, ministries, and technology partners worldwide to source content across the globe.",
+          "Secured start-up funding and provided organizational leadership on long-term strategy and policy."
+        ]
+      },
+      {
+        "period": "06/2015 — 08/2022",
+        "location": "Alberta, Canada",
+        "icon": "i-briefcase",
+        "role": "Financial Controller",
+        "org": "Highland Feeders Ltd.",
+        "two_col": false,
+        "bullets": [
+          "Prepared and reported financial statements, budgets, and forecast models for stakeholders.",
+          "Performed internal audits to assure compliance with internal controls and GAAP.",
+          "Managed cash flow, forecasting, working capital, and KPI analysis alongside the CEO."
+        ]
+      },
+      {
+        "period": "06/2014 — 05/2015",
+        "location": "Alberta, Canada",
+        "icon": "i-chart",
+        "role": "Financial Analyst",
+        "org": "Growing Power Hairy Hill LLP",
+        "two_col": false,
+        "bullets": [
+          "Analyzed financial data to identify trends and compiled insights into management reports.",
+          "Prepared monthly statements, budgets, forecasts, and KPI reviews."
+        ]
+      },
+      {
+        "period": "2004 — 2015",
+        "location": "India · England · Canada",
+        "icon": "i-users",
+        "role": "Earlier roles",
+        "org": "Finance &amp; Academia",
+        "two_col": true,
+        "bullets": [
+          "Faculty — Business &amp; Management, India",
+          "Commodity &amp; Stocks Dealer — Anand Rathi, India",
+          "Bank Teller — TD Canada Trust, Canada",
+          "Retail Team Lead — Hutchison 3G, England",
+          "Assistant Manager — Triumphant Institute, India",
+          "Financial Advisor — Tata AIG, India"
+        ]
+      }
+    ]
+  },
+  "expertise": {
+    "heading": "Areas of expertise",
+    "eyebrow": "Skills",
+    "lead": "The disciplines I bring to a finance function, a board table, and a lecture hall alike.",
+    "cards": [
+      {
+        "icon": "i-compass",
+        "title": "Strategic management &amp; leadership",
+        "body": "Setting direction and holding it — across finance functions and a global mission."
+      },
+      {
+        "icon": "i-target",
+        "title": "Strategic planning &amp; decision-making",
+        "body": "Turning financial evidence into decisions leadership teams can act on."
+      },
+      {
+        "icon": "i-trending",
+        "title": "Marketing &amp; business development",
+        "body": "Building the case for growth, and the partnerships that carry it."
+      },
+      {
+        "icon": "i-users",
+        "title": "Team building &amp; coaching",
+        "body": "Developing people — a habit carried over from years in the classroom."
+      },
+      {
+        "icon": "i-file",
+        "title": "Corporate policy development",
+        "body": "Writing the controls, policies, and structures an organisation runs on."
+      },
+      {
+        "icon": "i-cap",
+        "title": "Academic &amp; professional expertise",
+        "body": "Six years teaching business and management, alongside professional practice."
+      }
+    ]
+  },
+  "credentials": {
+    "heading": "Academic background",
+    "eyebrow": "Education & training",
+    "lead": "Qualified across three jurisdictions — Canada, the United Kingdom, and India.",
+    "meta": {
+      "count": "6",
+      "label": "qualifications",
+      "range": "2004 — 2019"
+    },
+    "items": [
+      {
+        "year": "2019",
+        "title": "Chartered Certified Accountant (ACCA)",
+        "institution": "The Association of Chartered Certified Accountants — London, UK"
+      },
+      {
+        "year": "2016",
+        "title": "Chartered Professional Accountant (CPA)",
+        "institution": "CPA Canada — Alberta, Canada"
+      },
+      {
+        "year": "2016",
+        "title": "Certified General Accountant (CGA)",
+        "institution": "CGA Canada — Alberta, Canada"
+      },
+      {
+        "year": "2010",
+        "title": "Master of Business Administration (MBA), Finance",
+        "institution": "University of Chester, England"
+      },
+      {
+        "year": "2006",
+        "title": "Master of Commerce (M.Com), Accounting &amp; Finance",
+        "institution": "Mahatma Gandhi University, India"
+      },
+      {
+        "year": "2004",
+        "title": "Bachelor of Commerce (B.Com), Accounting &amp; Finance",
+        "institution": "Mahatma Gandhi University, India"
+      }
+    ],
+    "feature": {
+      "icon": "i-medal",
+      "title": "MBA dissertation accepted by the World Economic Forum",
+      "body": "“Internationalization of Higher Education” was awarded an A+ and accepted as a research paper at the World Economic Forum, 2010 — ranked first in a graduating class of eighteen at the University of Chester.",
+      "link_label": "Read the dissertation",
+      "link_href": "https://chesterrep.openrepository.com/handle/10034/99749"
+    },
+    "distinctions": [
+      {
+        "icon": "i-award",
+        "title": "First in class — M.Com &amp; B.Com",
+        "body": "Ranked first in both cohorts at St. Albert's College, Cochin — GPA 4.0 (M.Com) and 3.7 (B.Com)."
+      },
+      {
+        "icon": "i-cap",
+        "title": "UGC-NET qualified · GPA 3.9 at NAIT",
+        "body": "Cleared India's National Eligibility Test for Assistant Professorship (2012); CGA prerequisites completed at NAIT, Edmonton with a 3.9 GPA."
+      }
+    ]
+  },
+  "certifications": {
+    "heading": "Credentials",
+    "eyebrow": "Certifications",
+    "lead": "Professional programmes and examinations completed in India, England, and Canada.",
+    "items": [
+      {
+        "icon": "i-award",
+        "title": "IELTS — General (Band 7.5)",
+        "meta": "Liverpool, UK · 2011"
+      },
+      {
+        "icon": "i-award",
+        "title": "IELTS — Academic (Band 7.0)",
+        "meta": "Cochin, India · 2008"
+      },
+      {
+        "icon": "i-trending",
+        "title": "NCFM — Financial Markets (86.25%)",
+        "meta": "National Stock Exchange · 2006"
+      },
+      {
+        "icon": "i-calculator",
+        "title": "TALLY Certified Professional",
+        "meta": "TALLY Solutions, India · 2007"
+      },
+      {
+        "icon": "i-chart",
+        "title": "FMVA — Financial Modeling &amp; Valuation",
+        "meta": "Corporate Finance Institute · In progress"
+      },
+      {
+        "icon": "i-briefcase",
+        "title": "Money, Banking &amp; Finance · Life Insurance",
+        "meta": "ICFAI & IRDA, India · 2006"
+      }
+    ]
+  },
+  "references": {
+    "heading": "Voices from the journey.",
+    "eyebrow": "In their words",
+    "lead": "15+ years of proven expertise — backed by trusted references from those who know John best.",
+    "items": [
+      {
+        "quote": "I have known John for over three decades, and throughout this time I have witnessed his unwavering Catholic faith, deep devotion to the Holy Mother, and steadfast commitment to Jesus Christ and the Holy Sacraments. His life reflects not only professional excellence but a strong spiritual foundation.",
+        "name": "Rev. Fr. Mathew Puthiayath",
+        "role": "Roman Catholic Diocese of Cochin, India",
+        "known": "Known John 30+ years",
+        "avatar_image": null,
+        "avatar_initials": "MP"
+      },
+      {
+        "quote": "I have witnessed John's academic brilliance and commitment firsthand. His discipline, analytical mind, and passion for lifelong learning make him an exceptional professional. It gives me immense pride to see how he has grown into a respected global leader.",
+        "name": "Retd. Prof. Dr. Rajagopala Nair",
+        "role": "Head of Department, St. Albert's College, India",
+        "known": "Known John 25+ years",
+        "avatar_image": {
+          "src": "images/ref-rajagopala-nair.jpg",
+          "alt": "",
+          "width": 224,
+          "height": 224
+        },
+        "avatar_initials": null
+      },
+      {
+        "quote": "John was once my teacher, and he left a lifelong impression on me. His commitment, passion for excellence, and ability to inspire students helped shape my journey as an entrepreneur. His mentorship continues to motivate me even today.",
+        "name": "Vinjish Vijay",
+        "role": "Founder & CEO, 90+ My Tuition App, India",
+        "known": "Known John 15+ years",
+        "avatar_image": {
+          "src": "images/ref-vinjish-vijay.jpg",
+          "alt": "",
+          "width": 224,
+          "height": 224
+        },
+        "avatar_initials": null
+      },
+      {
+        "quote": "John brings professionalism, integrity, and vision to every challenge. His ability to connect with people, analyze complex issues, and provide practical solutions is remarkable. I deeply respect his impact as a professional and a leader.",
+        "name": "Mike Kotelko",
+        "role": "President, Highland Feeders Ltd.",
+        "known": "Known John 10+ years",
+        "avatar_image": {
+          "src": "images/ref-mike-kotelko.jpg",
+          "alt": "",
+          "width": 224,
+          "height": 224
+        },
+        "avatar_initials": null
+      },
+      {
+        "quote": "John is one of the most dedicated and visionary professionals I've had the privilege of working with. His financial expertise and strategic thinking consistently deliver exceptional results. He is an innovator, a motivator, and a true asset to every team.",
+        "name": "Jose Cyriac",
+        "role": "Founder & CEO, TEQNIQS IT Services, Canada",
+        "known": "Known John 10+ years",
+        "avatar_image": null,
+        "avatar_initials": "JC"
+      },
+      {
+        "quote": "Working with John has always been a truly rewarding experience. His leadership, sharp financial insight, and ability to deliver results under pressure set him apart. He inspires those around him to aim higher and achieve more.",
+        "name": "Nidhin Ravi",
+        "role": "Founder & CEO, WEFT Technologies, India",
+        "known": "Known John 5+ years",
+        "avatar_image": {
+          "src": "images/ref-nidhin-ravi.jpg",
+          "alt": "",
+          "width": 224,
+          "height": 224
+        },
+        "avatar_initials": null
+      }
+    ],
+    "tabs": [
+      "Rev. Fr. Mathew Puthiayath",
+      "Prof. Rajagopala Nair",
+      "Vinjish Vijay",
+      "Mike Kotelko",
+      "Jose Cyriac",
+      "Nidhin Ravi"
+    ]
+  },
+  "beyond": {
+    "heading": "Where the work continues",
+    "eyebrow": "Beyond the resume",
+    "lead": "Two places where the professional life and the promise meet.",
+    "cards": [
+      {
+        "href": "https://santomission.com",
+        "image": {
+          "src": "images/santo-mission.jpg",
+          "alt": "A father and two children reading the Santo prayer app together by candlelight",
+          "width": 1200,
+          "height": 666
+        },
+        "eyebrow": "The Mission",
+        "title": "Santo Catholic Mission",
+        "body": "The global Catholic media apostolate I founded — prayer and inspiration for the world, in more than ten languages.",
+        "cta_label": "Visit santomission.com"
+      },
+      {
+        "href": "https://holymotherandme.com",
+        "image": {
+          "src": "images/holy-mother.jpg",
+          "alt": "Hands raised in prayer and praise against a golden sunset sky",
+          "width": 1200,
+          "height": 666
+        },
+        "eyebrow": "Spiritual Blog",
+        "title": "Holy Mother &amp; Me",
+        "body": "My personal faith journey and testimony — a life given to the Holy Mother and the Infant Jesus.",
+        "cta_label": "Visit holymotherandme.com"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's start a conversation.",
+    "lead": "For professional enquiries, collaboration, or a conversation of faith — send a message and I'll reply personally.",
+    "required_note": "Fields marked with an asterisk (*) are required.",
+    "fields": [
+      {
+        "id": "cf-website",
+        "name": "website",
+        "type": "text",
+        "label": "Leave this field empty",
+        "placeholder": null,
+        "required": false,
+        "autocomplete": "off",
+        "rows": null,
+        "options": null,
+        "error": null
+      },
+      {
+        "id": "cf-name",
+        "name": "name",
+        "type": "text",
+        "label": "Full name *",
+        "placeholder": "Your name",
+        "required": true,
+        "autocomplete": "name",
+        "rows": null,
+        "options": null,
+        "error": "Please enter your name."
+      },
+      {
+        "id": "cf-email",
+        "name": "email",
+        "type": "email",
+        "label": "Email address *",
+        "placeholder": "you@example.com",
+        "required": true,
+        "autocomplete": "email",
+        "rows": null,
+        "options": null,
+        "error": "Please enter a valid email address."
+      },
+      {
+        "id": "cf-phone",
+        "name": "phone",
+        "type": "tel",
+        "label": "Phone <span class=\"font-normal text-ink/45\">(optional)</span>",
+        "placeholder": "+1 000 000 0000",
+        "required": false,
+        "autocomplete": "tel",
+        "rows": null,
+        "options": null,
+        "error": null
+      },
+      {
+        "id": "cf-subject",
+        "name": "subject",
+        "type": "select",
+        "label": "Subject",
+        "placeholder": null,
+        "required": false,
+        "autocomplete": null,
+        "rows": null,
+        "options": [
+          "Professional enquiry",
+          "Collaboration",
+          "Santo Catholic Mission",
+          "A conversation of faith",
+          "Something else"
+        ],
+        "error": null
+      },
+      {
+        "id": "cf-message",
+        "name": "message",
+        "type": "textarea",
+        "label": "Message *",
+        "placeholder": "How can I help?",
+        "required": true,
+        "autocomplete": null,
+        "rows": "5",
+        "options": null,
+        "error": "Please include a short message."
+      }
+    ],
+    "consent": {
+      "label": "I consent to my details being stored so that John can reply to this enquiry. *",
+      "error": "Please tick the box so I can reply to you."
+    },
+    "submit": "Send message",
+    "submit_note": "I reply to every genuine message.",
+    "alt": {
+      "text": "Prefer to talk directly?",
+      "link_label": "Book a thirty-minute conversation",
+      "link_href": "https://calendly.com/johnjofin-santomission/30min"
+    }
+  },
+  "footer": {
+    "brand": "John Jofin",
+    "nav": [
+      {
+        "label": "About",
+        "href": "#about",
+        "external": false,
+        "download": false
+      },
+      {
+        "label": "Faith",
+        "href": "#faith",
+        "external": false,
+        "download": false
+      },
+      {
+        "label": "Journey",
+        "href": "#journey",
+        "external": false,
+        "download": false
+      },
+      {
+        "label": "Credentials",
+        "href": "#credentials",
+        "external": false,
+        "download": false
+      },
+      {
+        "label": "References",
+        "href": "#references",
+        "external": false,
+        "download": false
+      },
+      {
+        "label": "Contact",
+        "href": "#contact",
+        "external": false,
+        "download": false
+      },
+      {
+        "label": "Resume",
+        "href": "john-jofin-resume.pdf",
+        "external": true,
+        "download": true
+      },
+      {
+        "label": "Santo Mission ↗",
+        "href": "https://santomission.com",
+        "external": true,
+        "download": false
+      },
+      {
+        "label": "Holy Mother & Me ↗",
+        "href": "https://holymotherandme.com",
+        "external": true,
+        "download": false
+      }
+    ],
+    "social": [
+      {
+        "label": "John Jofin on LinkedIn",
+        "href": "https://www.linkedin.com/in/john-jofin",
+        "icon": "i-linkedin"
+      },
+      {
+        "label": "Santo Mission on Facebook",
+        "href": "https://www.facebook.com/johnjofin.santomission",
+        "icon": "i-facebook"
+      },
+      {
+        "label": "@johnjofin.santo on Instagram",
+        "href": "https://www.instagram.com/johnjofin.santo/",
+        "icon": "i-instagram"
+      },
+      {
+        "label": "Message John on WhatsApp",
+        "href": "https://wa.me/18255266099",
+        "icon": "i-whatsapp"
+      }
+    ],
+    "base": [
+      "© 2026 John Jofin · johnjofin.com",
+      "Ad Jesum per Mariam"
+    ]
+  }
+}

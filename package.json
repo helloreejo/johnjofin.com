@@ -1,0 +1,19 @@
+{
+  "name": "johnjofin.com",
+  "private": true,
+  "description": "Static reference site, WordPress content plugin, and the Next.js frontend under web/.",
+  "scripts": {
+    "seed:extract": "node scripts/seed/extract.mjs",
+    "seed:bundle": "node scripts/seed/bundle.mjs",
+    "seed": "scripts/wp.sh eval-file scripts/seed/seed.php",
+    "verify:payload": "python3 scripts/verify/payload-parity.py",
+    "verify:text": "node scripts/verify/text-parity.mjs",
+    "verify:visual": "node scripts/verify/visual-parity.mjs",
+    "verify:behaviour": "node scripts/verify/behaviour.mjs"
+  },
+  "devDependencies": {
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^25.8.0"
+  }
+}
